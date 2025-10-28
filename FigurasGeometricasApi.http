@@ -1,0 +1,6 @@
+@FigurasGeometricasApi_HostAddress = http://localhost:5038
+
+GET {{FigurasGeometricasApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
