@@ -295,6 +295,46 @@ public class FigurasContext : DbContext
 * `HasDiscriminator("Tipo")` → EF guarda todas las subclases (`Circulo`, `Rectangulo`, `Triangulo`) en **una sola tabla** llamada `Figuras`. En esa tabla hay una columna `Tipo` que dice si la fila es `Circulo`, `Rectangulo` o `Triangulo`. Esto se llama **TPH** (table-per-hierarchy).
 * `modelBuilder.Entity<Figura>().Property(...).IsRequired().HasMaxLength(120);` → le dice que `Nombre` es obligatorio y tiene máximo 120 caracteres.
 
+
+### Ejemplo
+```
+## 💾 La Receta de EF Core para Guardar Figuras
+
+Imagina que tienes tres tipos de figuras geométricas en tu código: `Círculo`, `Rectángulo` y `Triángulo`. Como los tres son tipos de `Figura`, decimos que heredan de ella.
+
+El archivo `FigurasContext.cs` es como el **"Cocinero"** que le da las instrucciones a la base de datos:
+
+### 1. La Tabla Única (TPH)
+
+* `public DbSet<Figura> Figuras { get; set; }`:
+    > **Significa:** "Quiero que sepas que voy a trabajar con una colección de `Figura`s." EF Core lo traduce a: "Voy a crear **una sola tabla** en la base de datos, y la voy a llamar `Figuras`."
+
+### 2. La Columna Mágica (Discriminador)
+
+* `modelBuilder.Entity<Figura>().HasDiscriminator<string>("Tipo")`:
+    > **Significa:** "En esta única tabla `Figuras`, vas a añadir una **columna extra** que se llamará `Tipo`."
+    > **Propósito:** Esta columna es la **etiqueta** que usamos en el ejemplo de la cartuchera. Su único trabajo es decirnos si esa fila es un Círculo, un Rectángulo o un Triángulo.
+
+### 3. Las Etiquetas (Mapeo de Valores)
+
+* `.HasValue<Circulo>("Circulo")`
+* `.HasValue<Rectangulo>("Rectangulo")`
+* `.HasValue<Triangulo>("Triangulo")`
+    > **Significa:** "Si en esa columna `Tipo` hay un `'Circulo'`, entonces tienes que crear un objeto de la clase `Círculo`. Si hay un `'Rectangulo'`, crea un `Rectángulo`."
+
+### En Resumen:
+
+EF Core toma la familia completa de figuras (`Figura`, `Círculo`, `Rectángulo`, `Triángulo`) y, en lugar de crear una tabla para cada una, las **amontona todas en una sola tabla** llamada `Figuras`. Luego, usa la columna `Tipo` para **ordenar y distinguir** qué es qué.
+
+Esto es exactamente lo que significa **TPH (Table-Per-Hierarchy)**.
+
+---
+
+### Extras (Configuración de Propiedades)
+
+* `modelBuilder.Entity<Figura>().Property(f => f.Nombre).IsRequired().HasMaxLength(120);`:
+    > **Significa:** "Para todas las figuras (Círculos, Rectángulos, Triángulos), el campo `Nombre` es **obligatorio** (`IsRequired()`) y no puede tener más de **120 letras** (`HasMaxLength(120)`)."
+```
 ---
 
 ### 🟦 `Models` — las figuras y sus fórmulas
