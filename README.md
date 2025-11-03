@@ -1,10 +1,8 @@
-# 🎨 FIGURASGEOMETRICASAPI — README para subir (explicado paso a paso, para [12+ años])
+# 🎨 FIGURASGEOMETRICASAPI
 
 > **Proyecto:** FigurasGeometricasApi
 > **Stack:** .NET 8 (C#), ASP.NET Core, EF Core (SQLite), Swagger (OpenAPI)
-> **Objetivo:** Crear una API (un programita que responde por Internet) que guarda **figuras geométricas** (Círculo, Rectángulo, Triángulo), calcula su área y perímetro, y permite crear/leer/editar/borrar esas figuras.
-
-> Este README explica *código por código*, línea por línea en las partes importantes, y tiene ejemplos claros para que hasta alguien de 12 años pueda entenderlo. Vas a poder copiar y pegar directamente.
+> **Objetivo:** Crear una API (Application Programming Interface) que guarda **figuras geométricas** (Círculo, Rectángulo, Triángulo), calcula su área y perímetro, y permite crear/leer/editar/borrar esas figuras.
 
 ---
 
@@ -16,7 +14,7 @@
 
 ## 📚 Índice
 
-1. ¿Qué es esta API y por qué sirve?
+1. [1) ¿Qué es esta API y por qué sirve?](¿Qué es esta API y por qué sirve?)
 2. Cómo ejecutar el proyecto (rápido)
 3. Estructura de archivos (resumen)
 4. Explicación **línea por línea** de los archivos clave:
@@ -35,7 +33,7 @@
 
 ---
 
-## 1) ¿Qué es esta API y por qué sirve? (explicado simple)
+## 1) ¿Qué es esta API y por qué sirve?
 
 Imaginá que tu API es como un **local donde guardás fichas** de figuras. Cada ficha tiene:
 
