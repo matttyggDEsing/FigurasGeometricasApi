@@ -14,9 +14,9 @@
 
 ## 📚 Índice
 
-1. [1) ¿Qué es esta API y por qué sirve?](¿Qué es esta API y por qué sirve?)
-2. Cómo ejecutar el proyecto (rápido)
-3. Estructura de archivos (resumen)
+1.¿Qué es esta API y por qué sirve?
+2. Cómo ejecutar el proyecto
+3. Estructura de archivos
 4. Explicación **línea por línea** de los archivos clave:
 
    * `Program.cs`
@@ -69,28 +69,33 @@ Allí vas a ver la interfaz de **Swagger** para probar la API con formularios am
 
 ## 3) Estructura de archivos (resumen)
 
-```
 /FigurasGeometricasApi
-  ├─ Program.cs
+  ├─ Program.cs                      → Archivo principal que inicia toda la aplicación, configura Swagger, la base de datos y los servicios.
+  │
   ├─ Controllers/
-  │   └─ FigurasController.cs
+  │   └─ FigurasController.cs        → Controlador principal: maneja las rutas (GET, POST, PUT, DELETE) para trabajar con las figuras.
+  │
   ├─ Data/
-  │   └─ FigurasContext.cs
+  │   └─ FigurasContext.cs           → Clase que conecta el código con la base de datos usando Entity Framework Core (EF Core).
+  │
   ├─ Models/
-  │   ├─ Figura.cs
-  │   ├─ Circulo.cs
-  │   ├─ Rectangulo.cs
-  │   └─ Triangulo.cs
+  │   ├─ Figura.cs                   → Clase base (abstracta) de todas las figuras. Contiene las propiedades y métodos comunes (Área y Perímetro).
+  │   ├─ Circulo.cs                  → Modelo que representa un círculo, con su radio y fórmulas para calcular área y perímetro.
+  │   ├─ Rectangulo.cs               → Modelo que representa un rectángulo, con base y altura, y sus cálculos correspondientes.
+  │   └─ Triangulo.cs                → Modelo del triángulo, con tres lados y cálculo del área usando la fórmula de Herón.
+  │
   ├─ DTOs/
-  │   ├─ FiguraCreateDto.cs
-  │   ├─ FiguraReadDto.cs
-  │   └─ FiguraUpdateDto.cs
+  │   ├─ FiguraCreateDto.cs          → Estructura de datos usada cuando el usuario crea una nueva figura (solo recibe los campos necesarios).
+  │   ├─ FiguraReadDto.cs            → Estructura que devuelve la API cuando se consulta una figura (incluye tipo, área y perímetro).
+  │   └─ FiguraUpdateDto.cs          → Estructura que se usa para actualizar una figura existente (permite modificar valores específicos).
+  │
   ├─ Services/
-  │   ├─ IFiguraService.cs
-  │   └─ FiguraService.cs
-  ├─ appsettings.json
-  └─ figuras.db
-```
+  │   ├─ IFiguraService.cs           → Interfaz que define qué métodos debe tener el servicio (crear, listar, borrar, etc.).
+  │   └─ FiguraService.cs            → Implementación de la lógica principal: decide qué tipo de figura crear, hace los cálculos y guarda los datos.
+  │
+  ├─ appsettings.json                → Archivo de configuración general (por ejemplo, la cadena de conexión a la base de datos).
+  │
+  └─ figuras.db                      → Archivo físico de la base de datos SQLite donde se guardan las figuras creadas.
 
 ---
 
