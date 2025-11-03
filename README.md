@@ -68,7 +68,7 @@ Allí vas a ver la interfaz de **Swagger** para probar la API con formularios am
 ---
 
 ## 3) Estructura de archivos (resumen)
-
+```
 /FigurasGeometricasApi
   ├─ Program.cs                      → Archivo principal que inicia toda la aplicación, configura Swagger, la base de datos y los servicios.
   │
@@ -96,7 +96,7 @@ Allí vas a ver la interfaz de **Swagger** para probar la API con formularios am
   ├─ appsettings.json                → Archivo de configuración general (por ejemplo, la cadena de conexión a la base de datos).
   │
   └─ figuras.db                      → Archivo físico de la base de datos SQLite donde se guardan las figuras creadas.
-
+```
 ---
 
 ## 4) Explicación línea por línea de los archivos clave
