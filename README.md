@@ -420,14 +420,50 @@ public class Rectangulo : Figura
 ### Ejemplo (Formula de heron)
 
 ```csharp
-📐 ¿Qué es la Fórmula de Herón?
-La Fórmula de Herón es una ecuación que se utiliza para calcular el área de cualquier triángulo cuando solo se conocen las longitudes de sus tres lados ($a$, $b$, y $c$).
-Normalmente, el área de un triángulo se calcula como:$$\text{Área} = \frac{\text{base} \times \text{altura}}{2}$$Si no sabes cuánto mide la altura (y muchos triángulos "chuecos" son difíciles de medir),
-la Fórmula de Herón te salva, permitiéndote calcular el área solo con las medidas de los lados.📝
-📐 La Fórmula y sus Partes
-La fórmula se divide en dos pasos principales:
-- 1. El Semiperímetro ($s$)Primero se calcula el semiperímetro ($s$). El semiperímetro es simplemente la mitad del perímetro (el contorno o la suma de los tres lados):$$s = \frac{a + b + c}{2}$$
-- 2. El Área ($A$)Una vez que tienes el semiperímetro ($s$), lo usas en la fórmula principal para calcular el área ($A$):$$A = \sqrt{s(s - a)(s - b)(s - c)}$$Donde:$A$ es el Área del triángulo.$s$ es el semiperímetro.$a$, $b$ y $c$ son las longitudes de los tres lados.
+
+# 📐 Fórmula de Herón
+
+La **Fórmula de Herón** es una ecuación matemática que permite calcular el **área de cualquier triángulo** cuando se conocen únicamente las longitudes de sus tres lados:
+`a`, `b` y `c`.
+
+Normalmente, el área de un triángulo se obtiene mediante la fórmula tradicional:
+
+[
+\text{Área} = \frac{\text{base} \times \text{altura}}{2}
+]
+
+Sin embargo, si no conocés la altura (y muchos triángulos *"chuecos"* son difíciles de medir), **la Fórmula de Herón** te permite calcular el área solo con las longitudes de los lados. 📝
+
+---
+
+## 📏 Pasos para calcular el área
+
+### 1️⃣ Calcular el Semiperímetro (`s`)
+
+El **semiperímetro** es la mitad del perímetro del triángulo (la suma de sus tres lados):
+
+[
+s = \frac{a + b + c}{2}
+]
+
+---
+
+### 2️⃣ Calcular el Área (`A`)
+
+Una vez obtenido el semiperímetro, se aplica la fórmula principal:
+
+[
+A = \sqrt{s(s - a)(s - b)(s - c)}
+]
+
+---
+
+## 🔍 Donde:
+
+* `A` → Área del triángulo
+* `s` → Semiperímetro
+* `a`, `b`, `c` → Longitudes de los tres lados
+
 ```
 ---
 
