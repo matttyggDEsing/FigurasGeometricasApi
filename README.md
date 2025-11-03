@@ -653,7 +653,7 @@ La API crea la figura y devuelve con `id` (por ejemplo `3`), área y perímetro 
 
 ## 7) Preguntas que te pueden hacer en la presentación (y respuestas listas)
 
-1. **¿Por qué usás DTOs en vez de enviar las entidades directamente?**
+1. **¿Por qué usás DTOs en vez de enviar las entidades directamente?** (Unidad de transferencia de objeto)
    → Para separar la forma en que guardo los datos (entidades) de cómo los expongo por la API. Los DTOs son más seguros y claros para quien consume la API.
 
 2. **¿Qué es Swagger?**
@@ -687,18 +687,5 @@ La API crea la figura y devuelve con `id` (por ejemplo `3`), área y perímetro 
 ## 9) Licencia / agradecimientos
 
 Proyecto de ejemplo para la clase. Si lo compartís, mencioná al autor: **Maty Anderegg**.
-¡Gracias por usar este README! Si querés, te armo también el **PowerPoint** automático con estas diapositivas y notas del orador.
 
 ---
-
-## ⚠️ Notas pedagógicas (cómo presentarlo a chicos de 12 años)
-
-* Usá analogías: la API es una *biblioteca* donde cada libro es una figura.
-* Mostrá Swagger en vivo: es gráfico y explica mucho.
-* Hacé un demo: crear una figura con un JSON y mostrar la respuesta.
-* Preguntas rápidas: ¿qué medida necesita un círculo? (respuesta: radio). ¿Qué es el perímetro? (respuesta: la “banda” alrededor).
-
----
-
-Si querés, te lo dejo listo como archivo `README.md` para subir al repo (te lo pego ya formateado).
-¿Querés también que te genere el **PowerPoint** con estas diapositivas y notas del orador para que lo uses en la presentación?
